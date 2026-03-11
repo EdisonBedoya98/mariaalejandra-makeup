@@ -26,8 +26,6 @@ const portfolioImages = [
   "/images/WhatsApp Image 2026-03-10 at 21.38.58 (3).jpeg",
   "/images/WhatsApp Image 2026-03-10 at 21.38.59.jpeg",
   "/images/WhatsApp Image 2026-03-10 at 21.38.59 (1).jpeg",
-  "/images/WhatsApp Image 2026-03-10 at 21.38.59 (2).jpeg",
-  "/images/WhatsApp Image 2026-03-10 at 21.38.59 (3).jpeg",
 ];
 
 function App() {
