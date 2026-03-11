@@ -340,7 +340,7 @@ function App() {
               className="flex flex-col sm:flex-row items-center justify-center gap-6"
             >
               <a
-                href="https://wa.me/573000000000" // Replace with real WhatsApp number later
+                href="https://wa.me/573192202911" // Replace with real WhatsApp number later
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto flex items-center justify-center space-x-3 bg-white text-stone-900 px-8 py-4 text-sm tracking-widest uppercase hover:bg-[#d4af37] hover:text-white transition-all duration-300"
