@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --color-brand: #d4af37;
+  --color-brand-light: #fdfbf7;
+  --color-brand-dark: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-stone-900 bg-[#fdfbf7];
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
