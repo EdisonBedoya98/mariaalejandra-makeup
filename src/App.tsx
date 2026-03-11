@@ -19,6 +19,17 @@ const staggerContainer: Variants = {
   },
 };
 
+const portfolioImages = [
+  "/images/WhatsApp Image 2026-03-10 at 21.38.58.jpeg",
+  "/images/WhatsApp Image 2026-03-10 at 21.38.58 (1).jpeg",
+  "/images/WhatsApp Image 2026-03-10 at 21.38.58 (2).jpeg",
+  "/images/WhatsApp Image 2026-03-10 at 21.38.58 (3).jpeg",
+  "/images/WhatsApp Image 2026-03-10 at 21.38.59.jpeg",
+  "/images/WhatsApp Image 2026-03-10 at 21.38.59 (1).jpeg",
+  "/images/WhatsApp Image 2026-03-10 at 21.38.59 (2).jpeg",
+  "/images/WhatsApp Image 2026-03-10 at 21.38.59 (3).jpeg",
+];
+
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -168,7 +179,7 @@ function App() {
             className="order-1 md:order-2 h-[60vh] md:h-[80vh] relative"
           >
             <img
-              src="/images/makeup1.png"
+              src="/images/WhatsApp Image 2026-03-10 at 21.38.58.jpeg"
               alt="Makeup by María Alejandra"
               className="w-full h-full object-cover rounded-sm"
               onError={(e) => {
@@ -233,67 +244,28 @@ function App() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="aspect-[4/5] overflow-hidden group"
-            >
-              <img
-                src="/images/makeup2.png"
-                alt="Glamour makeup"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&q=80&w=800";
-                }}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="aspect-[4/5] overflow-hidden group lg:col-span-2"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1200"
-                alt="Bridal makeup"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="aspect-[4/5] overflow-hidden group lg:col-span-2"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=1200"
-                alt="Natural makeup"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="aspect-[4/5] overflow-hidden group"
-            >
-              <img
-                src="/images/makeup1.png"
-                alt="Editorial makeup"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    "https://images.unsplash.com/photo-1512496115851-a1c8f1307e5e?auto=format&fit=crop&q=80&w=800";
-                }}
-              />
-            </motion.div>
+            {portfolioImages.map((src, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * (index % 4) }}
+                className={`aspect-[4/5] overflow-hidden group ${
+                  index % 4 === 1 || index % 4 === 2 ? "lg:col-span-2" : ""
+                }`}
+              >
+                <img
+                  src={src}
+                  alt={`Portfolio makeup ${index + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://images.unsplash.com/photo-1512496115851-a1c8f1307e5e?auto=format&fit=crop&q=80&w=800";
+                  }}
+                />
+              </motion.div>
+            ))}
           </div>
 
           <div className="mt-16 text-center">
